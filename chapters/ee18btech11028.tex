@@ -2,7 +2,8 @@
 \numberwithin{equation}{enumi}
 \item Plot the polar plot of 
 \begin{align}
-G(s) = \frac{1}{(s^2)(s+1)(s+2)}. 
+    G(s) = \frac{1}{(s^2)(s+1)(s+2)}. 
+    \label{eq:t1}
 \end{align}
 
 \solution
@@ -78,6 +79,47 @@ The following python code generates  Fig . \ref{fig:magnitude} (a), Fig . \ref{f
 \begin{lstlisting}
 codes/ee18btech11028.py
 \end{lstlisting}
+
+\textbf{Utility of polar plot in control systems}
+
+Polar plots make it easy to determine the Phase margin (PM) and gain margin (GM) of the system.
+This two quantities are substantial for determining the stability of the system.
+Please refer to the sections of Gain Margin and Phase margin for definations.
+
+As it is seen in polar plot of \eqref{eq:t1} the graph is not cutting the 180 $\degree$ line so we will use another transfer function to see the usage of polar plots.
+
+Let's take
+\begin{align}
+    G(s) = \frac{5}{(s)(s+1)(s+3)}.
+    \label{eq:t2} 
+\end{align}
+
+The polar plot for this transfer function using the above method looks like,
+\begin{figure}[!h]
+    \includegraphics[width=\columnwidth]{./figs/ee18btech11028/example.eps}
+  \caption{(d)}
+  \label{fig:example1}
+\end{figure}
+
+From the plot it's really easy to find GM,
+\begin{align}
+    GM = \frac{1}{|G(j\omega_{pc})|}
+\end{align}
+and PM is $\phi_{pm}$ in anti-clockwise direction considered as positive.
+We can find phase cross over frequency ($\omega_{gc}$) and gain cross over frequency ($\omega_{gc}$) by putting the magnitudes or phases as mentioned in the legend of \ref{fig:example1} in \eqref{eq:two}
+and \eqref{eq:one} respectively.
+Since the polar plot of \eqref{eq:t1} does not intersect 180 $\degree$ line it's GM is considered $\infty$.
+
+Now we can deduce the stability of the system by,
+\begin{itemize}
+    \item If the gain margin GM is greater than one and the phase margin PM is positive, then the control system is \textbf{stable}.
+    \item If the gain margin GM is equal to one and the phase margin PM is zero degrees, then the control system is marginally \textbf{stable}.
+    \item If the gain margin GM is less than one and (OR) the phase margin PM is negative, then the control system is \textbf{unstable}.
+\end{itemize}
+
+
+We can find phase cross over frequency ($\omega_{gc}$) and gain cross over frequency ($\omega_{gc}$) by putting the magnitudes or phases as mentioned in the legend of \ref{fig:example1} in \eqref{eq:two}
+and \eqref{eq:one} respectively.
 
 
 \end{enumerate}

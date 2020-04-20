@@ -2,7 +2,7 @@
 
 Created by Kuntal Kokate
 17.04.2020 at 1:14pm
-
+Released under GNU GPL
 '''
 import numpy as np
 import matplotlib.pyplot as plt
