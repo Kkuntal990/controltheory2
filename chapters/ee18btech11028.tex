@@ -3,7 +3,7 @@
 \item Plot the polar plot of 
 \begin{align}
     G(s) = \frac{1}{(s^2)(s+1)(s+2)}. 
-    \label{eq:t1}
+    \label{eq:ee18btech11028_1}
 \end{align}
 
 \solution
@@ -17,7 +17,7 @@ First substitute,
 Now the magnitude will be
 \begin{align}
     |G(j\omega)| = \frac{1}{(\omega^2)(\sqrt{1 + \omega^2})(\sqrt{1+4\omega^2})}
-    \label{eq:two}
+    \label{eq:ee18btech11028_2}
 \end{align}
 
 
@@ -29,7 +29,7 @@ Similarly phase $\phi$ can be determined by,
 The phase of first term is $\pi$ or can be $-\pi$ since it is a negative real number.
 \begin{align}
     \implies \phi = 180\degree - \tan^{-1}(\omega) - \tan^{-1}(2\omega)
-    \label{eq:one}
+    \label{eq:ee18btech11028_3}
 \end{align}
 
 Now we have to sweep $\omega$ from 0 to $\infty$.
@@ -37,11 +37,13 @@ Now we have to sweep $\omega$ from 0 to $\infty$.
 So at $\omega = 0$,
 \begin{align}
     |G(j \omega)| \xrightarrow{0} \infty 
+    \label{eq:ee18btech11028_4}
 \end{align}
 And phase,
 
 \begin{align}
     \angle {G(j \omega)} = 180 \degree
+    \label{eq:ee18btech11028_5}
 \end{align}
 
 At $\omega = \infty$
@@ -54,56 +56,48 @@ At $\omega = \infty$
 \end{align}
 
 For a complete plot we have to put various values of $\omega$ in 
-eq. \ref{eq:one} and eq. \ref{eq:two} for magnitude and phase respectively.
+eq. \ref{eq:ee18btech11028_2} and eq. \ref{eq:ee18btech11028_2} for magnitude and phase respectively.
 Thus the polar plot looks like, 
-
-
 \begin{figure}[!h]
-    \includegraphics[width=\columnwidth]{./figs/ee18btech11028/polar_plot2.eps}
-  \caption{(a)}
-  \label{fig:polarplot2}
+    \includegraphics[width=\columnwidth]{./figs/ee18btech11028/ee18btech11028.eps}
+  \caption{}
+  \label{fig:ee18btech11028_fig1}
 \end{figure}
 
-The following python code generates  Fig. \ref{fig:polarplot2} (a)
+The following python code generates  Fig. \ref{fig:ee18btech11028_fig1}
 \begin{lstlisting}
     codes/ee18btech11028.py
 \end{lstlisting}
+\textbf{Utility of polar plot in control systems}
 
-Also note that in Fig. \ref{fig:polarplot2} (a) the point $(-1,0)$ is enclosed by the polar plot,
+Note that in Fig. \ref{fig:ee18btech11028_fig1} (a) the point $(-1,0)$ is enclosed by the polar plot,
 which implies system is not stable.
 
-\textbf{Utility of polar plot in control systems}
 
 Polar plots make it easy to determine the Phase margin (PM) and gain margin (GM) of the system.
 This two quantities are substantial for determining the stability of the system.
 Please refer to the sections of Gain Margin and Phase margin for definations.
 
-As it is seen in polar plot of \eqref{eq:t1} the graph is not intersecting the 180 $\degree$ line in finite range we will use another transfer function to see the usage of polar plots.
-
-Let's take
-\begin{align}
-    G(s) = \frac{5}{(s)(s+1)(s+3)}.
-    \label{eq:t2} 
-\end{align}
-
-The polar plot for this transfer function using the above method looks like,
-\begin{figure}[!h]
-    \includegraphics[width=\columnwidth]{./figs/ee18btech11028/example.eps}
-  \caption{(b)}
-  \label{fig:examplefig}
-\end{figure}
+As it is seen in polar plot of \eqref{eq:ee18btech11028_1} the graph is not intersecting the 180 $\degree$
+it's GM is 0.
 
 
-From the Fig. \ref{fig:example1} (b) it is apparent that it does not enclose the point $(-1,0)$.
-So the system is stable.
-And also,
+
+
+
 From the plot it's really easy to find GM,
 \begin{align}
     GM = \frac{1}{|G(j\omega_{pc})|}
+    \label{eq:ee18btech11028_6}
 \end{align}
 and PM is $\phi_{pm}$ in anti-clockwise direction considered as positive.
 
-Since the polar plot of \eqref{eq:t1} has magnitude of $\infty$ at 180 $\degree$ line it's GM is considered 0.
+So from \eqref{eq:ee18btech11028_4}, \eqref{eq:ee18btech11028_5} and \eqref{eq:ee18btech11028_6},
+\begin{align}
+    GM = 0
+\end{align}
+
+And it intersects unity circle as in Fig. \ref{fig:ee18btech11028_fig1} with $\phi_{pm}$ in clockwise direction, which implies it is negative.
 
 Now we can deduce the stability of the system by,
 \begin{itemize}
@@ -112,13 +106,10 @@ Now we can deduce the stability of the system by,
     \item If the gain margin GM is less than one and (OR) the phase margin PM is negative, then the control system is \textbf{unstable}.
 \end{itemize}
 
+Therefore, our system is unstable.
 
-We can find phase cross over frequency ($\omega_{gc}$) and gain cross over frequency ($\omega_{gc}$) by putting the magnitudes or phases as mentioned in the legend of \ref{fig:example1} in \eqref{eq:two}
-and \eqref{eq:one} respectively.
-The following python code generates  Fig . \ref{fig:examplefig} (b),
-\begin{lstlisting}
-codes/example.py
-\end{lstlisting}
+We can find phase cross over frequency ($\omega_{gc}$) and gain cross over frequency ($\omega_{gc}$) by putting the magnitudes or phases as mentioned in the legend of \ref{fig:ee18btech11028_fig1} in \eqref{eq:ee18btech11028_2}
+and \eqref{eq:ee18btech11028_3} respectively.
 
 
 \end{enumerate}
