@@ -1,5 +1,4 @@
 '''
-
 Created by Kuntal Kokate
 17.04.2020 at 1:14pm
 Released under GNU GPL
@@ -25,27 +24,6 @@ MAG, PHASE, W = G.freqresp(OMEGA)
 ax = plt.subplot(111, projection='polar')
 
 ax.plot(PHASE.reshape((2001,))[-995:-800],MAG.reshape((2001,))[-995:-800])
+ax.plot(np.pi, 1, 'b+') #plotting (-1,0)
+ax.text(-3*np.pi/4, 10, '(-1,0)')
 plt.show()
-ax1 = plt.subplot(111, projection='polar')
-
-ax1.plot(PHASE.reshape((2001,))[-1000:],MAG.reshape((2001,))[-1000:])
-
-plt.title("polar plot")
-plt.show()
-
-#plotting magintude versus omega
-plt.plot(W, MAG.reshape((2001,)))
-plt.title("Magnitude plot")
-plt.xlabel("$\omega$")
-plt.ylabel("|G(j$\omega$)|")
-plt.xlim(-5, 5)
-plt.show()
-'''
-#plotting Phase versus omega
-plt.plot(W, PHASE.reshape((2001,)))
-plt.title("Phase plot")
-plt.xlabel("w")
-plt.ylabel("$Phase$")
-plt.xlim(-10, 10)
-plt.show()
-'''

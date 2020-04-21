@@ -45,5 +45,7 @@ ax.annotate('|G(j$\omega_{pc}$)|', xy=(np.pi, 0.25), xytext=(3*np.pi/4, 0.75), a
 ax.plot([0, phi], [0, 1], '--')
 ax.plot([-np.pi, (-np.pi+phi)/2, phi], [0.7, 0.7, 0.7], ":")
 ax.text((-np.pi+ phi)/2, 1, '$\phi_{pm}$')
+ax.plot(np.pi, 1, 'b+')
+ax.text(np.pi-0.1, 1, '(-1,0)')
 plt.legend(loc='upper_center')
 plt.show()

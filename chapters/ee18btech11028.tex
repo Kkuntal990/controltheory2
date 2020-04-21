@@ -20,11 +20,6 @@ Now the magnitude will be
     \label{eq:two}
 \end{align}
 
-\begin{figure}[!h]
-  \includegraphics[width=\columnwidth]{./figs/ee18btech11028/magnitude.eps}
-  \caption{(a)}
-  \label{fig:magnitude}
-\end{figure}
 
 Similarly phase $\phi$ can be determined by,
 
@@ -62,23 +57,20 @@ For a complete plot we have to put various values of $\omega$ in
 eq. \ref{eq:one} and eq. \ref{eq:two} for magnitude and phase respectively.
 Thus the polar plot looks like, 
 
-\begin{figure}[!h]
-  \includegraphics[width=\columnwidth]{./figs/ee18btech11028/polarplot.eps}
-  \caption{(b)}
-  \label{fig:polarplot}
-\end{figure}
 
-To take a closer look at how phase is changing in smaller ranges of $|G(j \omega)|$.
 \begin{figure}[!h]
     \includegraphics[width=\columnwidth]{./figs/ee18btech11028/polar_plot2.eps}
-  \caption{(c)}
+  \caption{(a)}
   \label{fig:polarplot2}
 \end{figure}
 
-The following python code generates  Fig . \ref{fig:magnitude} (a), Fig . \ref{fig:polarplot} (b) and Fig. \ref{fig:polarplot2} (c)
+The following python code generates  Fig. \ref{fig:polarplot2} (a)
 \begin{lstlisting}
-codes/ee18btech11028.py
+    codes/ee18btech11028.py
 \end{lstlisting}
+
+Also note that in Fig. \ref{fig:polarplot2} (a) the point $(-1,0)$ is enclosed by the polar plot,
+which implies system is not stable.
 
 \textbf{Utility of polar plot in control systems}
 
@@ -97,10 +89,14 @@ Let's take
 The polar plot for this transfer function using the above method looks like,
 \begin{figure}[!h]
     \includegraphics[width=\columnwidth]{./figs/ee18btech11028/example.eps}
-  \caption{(d)}
+  \caption{(b)}
   \label{fig:example1}
 \end{figure}
 
+
+From the Fig. \ref{fig:example1} (b) it is apparent that it does not enclose the point $(-1,0)$.
+So the system is stable.
+And also,
 From the plot it's really easy to find GM,
 \begin{align}
     GM = \frac{1}{|G(j\omega_{pc})|}
@@ -112,14 +108,14 @@ Since the polar plot of \eqref{eq:t1} has magnitude of $\infty$ at 180 $\degree$
 Now we can deduce the stability of the system by,
 \begin{itemize}
     \item If the gain margin GM is greater than one and the phase margin PM is positive, then the control system is \textbf{stable}.
-    \item If the gain margin GM is equal to one and the phase margin PM is zero degrees, then the control system is marginally \textbf{stable}.
+    \item If the gain margin GM is equal to one and the phase margin PM is zero degrees, then the control system is  \textbf{marginally stable}.
     \item If the gain margin GM is less than one and (OR) the phase margin PM is negative, then the control system is \textbf{unstable}.
 \end{itemize}
 
 
 We can find phase cross over frequency ($\omega_{gc}$) and gain cross over frequency ($\omega_{gc}$) by putting the magnitudes or phases as mentioned in the legend of \ref{fig:example1} in \eqref{eq:two}
 and \eqref{eq:one} respectively.
-The following python code generates  Fig . \ref{fig:magnitude} (d),
+The following python code generates  Fig . \ref{fig:magnitude} (b),
 \begin{lstlisting}
 codes/example.py
 \end{lstlisting}
