@@ -86,7 +86,7 @@ Polar plots make it easy to determine the Phase margin (PM) and gain margin (GM)
 This two quantities are substantial for determining the stability of the system.
 Please refer to the sections of Gain Margin and Phase margin for definations.
 
-As it is seen in polar plot of \eqref{eq:t1} the graph is not cutting the 180 $\degree$ line so we will use another transfer function to see the usage of polar plots.
+As it is seen in polar plot of \eqref{eq:t1} the graph is not intersecting the 180 $\degree$ line in finite range we will use another transfer function to see the usage of polar plots.
 
 Let's take
 \begin{align}
@@ -106,9 +106,8 @@ From the plot it's really easy to find GM,
     GM = \frac{1}{|G(j\omega_{pc})|}
 \end{align}
 and PM is $\phi_{pm}$ in anti-clockwise direction considered as positive.
-We can find phase cross over frequency ($\omega_{gc}$) and gain cross over frequency ($\omega_{gc}$) by putting the magnitudes or phases as mentioned in the legend of \ref{fig:example1} in \eqref{eq:two}
-and \eqref{eq:one} respectively.
-Since the polar plot of \eqref{eq:t1} does not intersect 180 $\degree$ line it's GM is considered $\infty$.
+
+Since the polar plot of \eqref{eq:t1} has magnitude of 0 at 180 $\degree$ line it's GM is considered 0.
 
 Now we can deduce the stability of the system by,
 \begin{itemize}
